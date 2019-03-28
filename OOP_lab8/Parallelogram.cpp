@@ -8,3 +8,7 @@
 
 #include <stdio.h>
 #include "Parallelogram.h"
+
+Parallelogram::Parallelogram(double side1,double side2,double angle12) :
+                                    Quadrilateral(side1,side2,side1, angle12,(M_PI-angle12)){}
+

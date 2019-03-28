@@ -8,7 +8,6 @@
 
 #include <stdio.h>
 #include "Quadrilateral.h"
-#include "cmath"
 
 
 Quadrilateral::Quadrilateral(double side1,double side2 ,double side3,double angle12,double angle23)
@@ -20,14 +19,21 @@ Quadrilateral::Quadrilateral(double side1,double side2 ,double side3,double angl
     param[4] = angle23;
 }
 
-virtual double Quadrilateral::Area()
+double Quadrilateral::side4Find()
 {
-    return side1*side2*angle;
+    
 }
 
-virtual double Quadrilateral::Perimeter()
+double Quadrilateral::Area()
 {
-    return 2 * Sides.Sum();
+    // double side4 = ;
+    // return ;
+}
+
+double Quadrilateral::Perimeter()
+{
+    //side4=
+    //return param[0]+param[1]+param[3]+side4;
 }
 
 

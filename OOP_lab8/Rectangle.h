@@ -11,14 +11,13 @@
 
 #include "Parallelogram.h"
 
-class Rectangle: public Parallelogram
+class Rectangle: virtual public Parallelogram
 {
 protected:
     
 public:
-    Rectangle() : Parallelogram(){}
-    double Area(double,double);
-    double Perimeter(double,double);
+    Rectangle(double, double);
+   
 };
 
 

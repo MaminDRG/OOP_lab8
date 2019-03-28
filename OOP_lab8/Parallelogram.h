@@ -17,9 +17,9 @@ class Parallelogram: public Quadrilateral
 protected:
     
 public:
-    Parallelogram() : Quadrilateral(){}
-    double Area(double,double,double);
-    double Perimeter(double,double);
+    
+    Parallelogram(double,double,double);
+
 };
 
 

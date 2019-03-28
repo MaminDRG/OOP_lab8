@@ -17,9 +17,8 @@ class Square: public Rectangle, public Rhomb
 protected:
 
 public:
-    Square() : Rhomb(){}
-    double Area(double);
-    double Perimeter(double);
+    Square(double);
+   
 };
 
 #endif /* Square_h */

@@ -7,3 +7,5 @@
 //
 
 #include "Rectangle.h"
+
+Rectangle::Rectangle(double side1,double side2) : Parallelogram(side1,side2,M_PI/2){};

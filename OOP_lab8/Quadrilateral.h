@@ -9,6 +9,7 @@
 #ifndef Quadrilateral_h
 #define Quadrilateral_h
 
+#include "cmath"
 class Quadrilateral
 {
     
@@ -26,12 +27,11 @@ public:
     Quadrilateral(double);
     Quadrilateral();
     
+    double side4Find();
+    double Area();
+    double Perimeter();
     
-    virtual double Area();
-    virtual double Perimeter();
-    
-    
-    
+
 
     
 };

@@ -77,12 +77,12 @@
 				52D4F054224C12DE00E086B1 /* Quadrilateral.cpp */,
 				52D4F050224C124C00E086B1 /* Parallelogram.h */,
 				52D4F056224C12FD00E086B1 /* Parallelogram.cpp */,
-				52D4F051224C125B00E086B1 /* Square.h */,
-				52D4F058224C130D00E086B1 /* Square.cpp */,
-				52D4F052224C127F00E086B1 /* Rectangle.h */,
-				52D4F05A224C131F00E086B1 /* Rectangle.cpp */,
 				52D4F053224C12BE00E086B1 /* Rhomb.h */,
 				52D4F05D224C133900E086B1 /* Rhomb.cpp */,
+				52D4F052224C127F00E086B1 /* Rectangle.h */,
+				52D4F05A224C131F00E086B1 /* Rectangle.cpp */,
+				52D4F051224C125B00E086B1 /* Square.h */,
+				52D4F058224C130D00E086B1 /* Square.cpp */,
 			);
 			path = OOP_lab8;
 			sourceTree = "<group>";

@@ -10,14 +10,14 @@
 #define Rhomb_h
 
 #include "Parallelogram.h"
-class Rhomb: public Parallelogram
+
+class Rhomb: virtual public Parallelogram
 {
 protected:
     
 public:
-    Rhomb() : Parallelogram(){}
-    double Area(double,double);
-    double Perimeter(double);
+
+    Rhomb(double,double);
 };
 
 

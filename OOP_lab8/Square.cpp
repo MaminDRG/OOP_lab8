@@ -9,12 +9,4 @@
 #include <stdio.h>
 #include "Square.h"
 
-double Square::Area(double side1)
-{
-    return side1*side1;
-}
-
-double Square::Perimeter(double side1)
-{
-    return 4*side1;
-}
+Square::Square(double side1) : Rectangle(side1,side1), Rhomb(side1,M_PI/2), Parallelogram(side1,side1,M_PI/2){};
