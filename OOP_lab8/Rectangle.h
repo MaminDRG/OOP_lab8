@@ -17,7 +17,7 @@ protected:
     
 public:
     Rectangle(double, double);
-   
+    ~Rectangle();
 };
 
 

@@ -8,4 +8,10 @@
 
 #include "Rectangle.h"
 
-Rectangle::Rectangle(double side1,double side2) : Parallelogram(side1,side2,M_PI/2){};
+Rectangle::Rectangle(double side1,double side2) : Parallelogram(side1,side2,90){};
+
+Rectangle::~Rectangle()
+{
+    std::cout << "dstrctr Rectngl-->";
+    
+}

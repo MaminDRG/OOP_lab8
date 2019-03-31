@@ -10,6 +10,8 @@
 #define Quadrilateral_h
 
 #include "cmath"
+#include <iostream>
+#include "Point.h"
 class Quadrilateral
 {
     
@@ -22,14 +24,13 @@ public:
         //constructor
     //Quadrilateral();
     Quadrilateral(double,double,double,double,double);
-    Quadrilateral(double,double,double);
-    Quadrilateral(double,double);
-    Quadrilateral(double);
-    Quadrilateral();
     
-    double side4Find();
-    double Area();
-    double Perimeter();
+    double side4Find(double,double,double,double,double);
+    void Area();
+    void Perimeter();
+    
+    virtual ~Quadrilateral();
+    
     
 
 

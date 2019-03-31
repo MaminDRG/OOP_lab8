@@ -13,6 +13,7 @@
 		52D4F059224C130D00E086B1 /* Square.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D4F058224C130D00E086B1 /* Square.cpp */; };
 		52D4F05C224C131F00E086B1 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D4F05A224C131F00E086B1 /* Rectangle.cpp */; };
 		52D4F05E224C133900E086B1 /* Rhomb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D4F05D224C133900E086B1 /* Rhomb.cpp */; };
+		52D4F077224E658000E086B1 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D4F076224E658000E086B1 /* Point.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		52D4F058224C130D00E086B1 /* Square.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Square.cpp; sourceTree = "<group>"; };
 		52D4F05A224C131F00E086B1 /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
 		52D4F05D224C133900E086B1 /* Rhomb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rhomb.cpp; sourceTree = "<group>"; };
+		52D4F075224E656A00E086B1 /* Point.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
+		52D4F076224E658000E086B1 /* Point.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				52D4F05A224C131F00E086B1 /* Rectangle.cpp */,
 				52D4F051224C125B00E086B1 /* Square.h */,
 				52D4F058224C130D00E086B1 /* Square.cpp */,
+				52D4F075224E656A00E086B1 /* Point.h */,
+				52D4F076224E658000E086B1 /* Point.cpp */,
 			);
 			path = OOP_lab8;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				52B87B8A2242D96800FC134F /* main.cpp in Sources */,
 				52D4F05E224C133900E086B1 /* Rhomb.cpp in Sources */,
 				52D4F057224C12FD00E086B1 /* Parallelogram.cpp in Sources */,
+				52D4F077224E658000E086B1 /* Point.cpp in Sources */,
 				52D4F05C224C131F00E086B1 /* Rectangle.cpp in Sources */,
 				52D4F055224C12DE00E086B1 /* Quadrilateral.cpp in Sources */,
 			);

@@ -18,7 +18,7 @@ protected:
 
 public:
     Square(double);
-   
+    ~Square();
 };
 
 #endif /* Square_h */

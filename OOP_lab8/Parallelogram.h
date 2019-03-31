@@ -20,8 +20,9 @@ public:
     
     Parallelogram(double,double,double);
 
-};
+    ~Parallelogram();
 
+};
 
 
 #endif /* Parallelogram_h */

@@ -9,4 +9,9 @@
 #include <stdio.h>
 #include "Square.h"
 
-Square::Square(double side1) : Rectangle(side1,side1), Rhomb(side1,M_PI/2), Parallelogram(side1,side1,M_PI/2){};
+Square::Square(double side1) : Rectangle(side1,side1), Rhomb(side1,90), Parallelogram(side1,side1,90){};
+Square::~Square()
+{
+    std::cout << "dstrctr Square-->";
+    
+}

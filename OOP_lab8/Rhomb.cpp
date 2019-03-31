@@ -12,3 +12,8 @@
 Rhomb::Rhomb(double side1,double angle12) :
                                     Parallelogram(side1,side1,angle12){}
 
+Rhomb::~Rhomb()
+{
+    std::cout<< "dstrctr Rhomb-->";
+    
+}

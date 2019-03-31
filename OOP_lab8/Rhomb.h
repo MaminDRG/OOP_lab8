@@ -18,6 +18,7 @@ protected:
 public:
 
     Rhomb(double,double);
+    ~Rhomb();
 };
 
 
