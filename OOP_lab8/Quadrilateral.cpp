@@ -19,7 +19,7 @@ Quadrilateral::Quadrilateral(double side1, double side2, double side3, double an
     param[4] = angle23;
 }
 
-double Quadrilateral::side4Find(double side1, double side2, double side3, double angle12, double angle23)
+double Quadrilateral::side4Find(double side1, double side2, double side3, double angle12, double angle23,double* angle34)
 {
     ///////
     double side4;
@@ -56,15 +56,33 @@ double Quadrilateral::side4Find(double side1, double side2, double side3, double
             y2 = sqrtl((omega*alpha*alpha)/(1+alpha*alpha));
         }
     
-        else
+            else
         {
             double determ = ((2*gamma*betta)*(2*gamma*betta) - 4*(1+alpha*alpha)*(gamma*gamma-omega*alpha*alpha));
-            //double x1 = ((2*gamma*betta) + sqrt(determ))/(2*(gamma*gamma-omega*alpha*alpha));
-            y2 = ((2*gamma*betta) - sqrtl(determ))/(2*(gamma*gamma-omega*alpha*alpha));
+           double temp1 = ((2*gamma*betta) - sqrtl(determ))/(2*(1+alpha*alpha));
+           double temp2 = ((2*gamma*betta) - sqrtl(determ))/(2*(1+alpha*alpha));
+            y2 = std::max(temp1,temp2);
         }
     
+    
+    
+    
     double Cy = y2+By;
-    double Cx = Bx+(gamma-betta*(Cy-By))/alpha;
+    double Cx = Bx - (gamma-betta*(By-Cy))/alpha;
+    
+    /////
+    if ( betta == 0)
+    {
+        Cx = Bx - gamma/alpha;
+    }
+    ////
+    
+    // recalculation
+    if ((Cx-Bx) != 0) Cy = sqrtl(omega-((Cx-Bx)*(Cx-Bx)))+By;
+    else Cy = sqrtl(omega)+By;
+    
+   
+
     pointC.SetPoint(Cx,Cy);
     
         // We know :
@@ -89,11 +107,14 @@ double Quadrilateral::side4Find(double side1, double side2, double side3, double
         y2 = sqrtl((omega*alpha*alpha)/(1+alpha*alpha));
     }
     
+   
     else
     {
         double determ = ((2*gamma*betta)*(2*gamma*betta) - 4*(1+alpha*alpha)*(gamma*gamma-omega*alpha*alpha));
-        //double x1 = ((2*gamma*betta) + sqrt(determ))/(2*(gamma*gamma-omega*alpha*alpha));
-        y2 = ((2*gamma*betta) - sqrtl(determ))/(2*(gamma*gamma-omega*alpha*alpha));
+        double temp1,temp2;
+        temp1 = ((2*gamma*betta) + sqrt(determ))/(2*(1+alpha*alpha));
+        temp2 = ((2*gamma*betta) - sqrtl(determ))/(2*(1+alpha*alpha));
+        y2 = std::max(temp1,temp2);
     }
     
     double Dy = y2+Cy;
@@ -101,8 +122,20 @@ double Quadrilateral::side4Find(double side1, double side2, double side3, double
     
         if (alpha == 0) Dx = 0;
     
-        else Dx = Cx+(gamma-betta*(Dy-Cy))/alpha;
+        else Dx = Cx - (gamma-betta*(Cy-Dy))/alpha;
     
+    /////
+    if ( betta == 0)
+    {
+        Dx = Cx - gamma/alpha;
+    }
+    ////
+
+    
+    // recalculation
+    //if ((Dx-Cx) != 0) Dy = sqrtl(omega - ((Dx-Cx)*(Dx-Cx)))+Cy;
+    //else Dy = sqrtl(omega)+Cy;
+
     pointD.SetPoint(Dx,Dy);
     
     double* infoPointD = new double[2];
@@ -110,28 +143,44 @@ double Quadrilateral::side4Find(double side1, double side2, double side3, double
     
     side4 = sqrtl( ( ( (*(infoPointD)) - (*(infoPointA)) ) * ( (*(infoPointD)) - (*(infoPointA)) ) ) +( ( (*(infoPointD+1)) - (*(infoPointA+1)) ) * ( (*(infoPointD+1)) - (*(infoPointA+1)) ) ) );
     
+    //now we should find angle34
+    
+    if ((1000*(alpha*(Cx-Dx)+betta*(Cy-Dy))) < 1)
+    {
+        (*angle34) = acos(0) * 180.0 / 3.14159265359;
+    }
+        
+     else (*angle34) = acos(BC*CD/(alpha*(Cx-Dx)+betta*(Cy-Dy))) * 180.0 / 3.14159265359;
+    
     delete [] infoPointA;
     delete [] infoPointD;
-    
     return side4;
 }
 
-void Quadrilateral::Area()
+double Quadrilateral::Perimeter()
 {
-    double side4;
-    side4 = this->side4Find(param[0], param[1], param[2], param[3], param[4]);
-    std::cout << " SIDE4 = " << side4 << std::endl;
+    double* angle34 = new double;
+    double side4 = this->side4Find(param[0], param[1], param[2], param[3], param[4],angle34);
+    delete angle34;
+    return side4 + param[0] + param[1] + param[2];
 }
 
-void Quadrilateral::Perimeter()
+double Quadrilateral::Area()
 {
-    //side4=
-    //return param[0]+param[1]+param[3]+side4;
+    double* angle34 = new double;
+    double side4 = this->side4Find(param[0], param[1], param[2], param[3], param[4],angle34);
+    double halfOfPerim = this->Perimeter()/2;
+    double t1;
+    t1 = cos((param[3]+(*angle34))* 3.14159265359 / 180 /2);
+    double Area = sqrtl( (halfOfPerim - param[0]) * (halfOfPerim - param[1]) * (halfOfPerim - param[2]) * (halfOfPerim - side4) - param[0] * param[1] * param[2] * side4 * cos((param[3]+(*angle34))* 3.14159265359 / 180 /2));
+    delete angle34;
+    return Area;
 }
 
 Quadrilateral::~Quadrilateral()
 {
     std::cout  << "dstrctr quadrltrl-->" ;
+    
     
 }
 

@@ -44,28 +44,28 @@ int main() {
     
     std::cout << "Creating Quadrilateral:" << std::endl;
     quadrilateral1 = new Quadrilateral(side1, side2, side3,angle12,angle23);
-    quadrilateral1->Area();
-    quadrilateral1->Perimeter();
+    std::cout << "The Area is: " << quadrilateral1->Area() << std::endl;
+    std::cout << "The perimeter is: " << quadrilateral1->Perimeter() << std::endl;
     
     std::cout << "Creating Parallelogram:" << std::endl;
     quadrilateral2 = new Parallelogram(side1,side2, angle12);
-    quadrilateral2->Area();
-    quadrilateral2->Perimeter();
+    std::cout << "The Area is: " << quadrilateral2->Area() << std::endl;
+    std::cout << "The perimeter is: " << quadrilateral2->Perimeter() << std::endl;
     
     std::cout << "Creating Rhomb:" << std::endl;
     quadrilateral3 = new Rhomb(side1, angle12);
-    quadrilateral3->Area();
-    quadrilateral3->Perimeter();
+    std::cout << "The Area is: " << quadrilateral3->Area() << std::endl;
+    std::cout << "The perimeter is: " <<  quadrilateral3->Perimeter() << std::endl;
     
     std::cout << "Creating Rectangle:" << std::endl;
     quadrilateral4 = new Rectangle(side1, side2);
-    quadrilateral4->Area();
-    quadrilateral4->Perimeter();
+    std::cout << "The Area is: " << quadrilateral4->Area() << std::endl;
+    std::cout << "The perimeter is: " << quadrilateral4->Perimeter() << std::endl;
     
     std::cout << "Creating Square:" << std::endl;
     quadrilateral5 = new Square(side1);
-    quadrilateral5->Area();
-    quadrilateral5->Perimeter();
+    std::cout << "The Area is: " << quadrilateral5->Area() << std::endl;
+    std::cout << "The perimeter is: " << quadrilateral5->Perimeter() << std::endl;
 
     std::cout << "Deleting..." << std::endl << std::endl;
     delete quadrilateral1;

@@ -25,9 +25,9 @@ public:
     //Quadrilateral();
     Quadrilateral(double,double,double,double,double);
     
-    double side4Find(double,double,double,double,double);
-    void Area();
-    void Perimeter();
+    double side4Find(double,double,double,double,double,double*);
+    double Area();
+    double Perimeter();
     
     virtual ~Quadrilateral();
     
